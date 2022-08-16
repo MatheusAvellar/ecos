@@ -1,0 +1,170 @@
+html {
+  font-family: Inter, Roboto, sans-serif;
+}
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  color: #444;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", Roboto, sans-serif;
+  }
+}
+body {
+  color: #111;
+  overflow-y: scroll;
+}
+header,main,footer {
+  max-width: 800px;
+  margin: auto;
+}
+header {
+  padding: 1em 1em 0;
+}
+main {
+  padding: 1em;
+}
+footer {
+  padding: 0 1em 1em;
+}
+strong, b, h1, h2, h3, h4 {
+  font-weight: 600;
+}
+h1,h2,h3,h4, p {
+  margin: 0;
+  line-height: 1.25;
+}
+h2 {
+  margin-bottom: .5em;
+}
+
+audio, output {
+  width: 100%;
+  display: block;
+}
+output {
+  text-align: center;
+  border-radius: 3px;
+  margin: .5em 0;
+  padding: 1em;
+  white-space: pre;
+  background-color: #f1f3f4;
+  line-height: 1.25;
+  min-height: 3.25em;
+  box-sizing: border-box;
+  height: 1.25em;
+  overflow: hidden;
+  position: relative;
+}
+output p:first-of-type {
+  transition: margin .1s ease;
+}
+output p:not([data-selected]) {
+  opacity: 0.25;
+}
+output::before,
+output::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1em;
+  box-shadow: 0 0 1em 0.75em #f1f3f4;
+  z-index: 1;
+}
+output::before {
+  top: -1em;
+}
+output::after {
+  bottom: -1em;
+}
+
+a[href] {
+  font-weight: 600;
+  color: #2196f3;
+  text-decoration: none;
+}
+a[href]:hover, a[href]:focus, a[href]:active {
+  text-decoration: underline;
+}
+
+hr {
+  height: 2.5px;
+  background-color: #dbe1e5;
+  border: 0;
+  margin: 7rem auto;
+  width: 50%;
+}
+
+.audio-sample {
+  margin-bottom: 3em;
+}
+.image-wrapper {
+  position: relative;
+  min-height: 7em;
+  margin-top: 2em;
+}
+.image-wrapper img {
+  position: absolute;
+  max-height: 10em;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.image-wrapper h2 {
+  line-height: 1;
+  font-size: 5em;
+  padding-right: .5em;
+  text-shadow: 0px 5px 2px rgb(0, 0, 0, .6);
+  color: #30c6ff;
+}
+
+.extras {
+  position: relative;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  border: 1px solid #dcdcdc;
+  padding: 0.75em;
+  border-radius: 3px;
+}
+@media screen and (max-width: 600px) {
+  .extras {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.extras::before {
+  content: "EXTRAS";
+  position: absolute;
+  line-height: 1;
+  font-size: .75em;
+  top: -0.5em;
+  left: 1em;
+  padding: 0 0.3em;
+  color: #dcdcdc;
+  background-color: #fff;
+}
+.extras audio + p {
+  margin-top: .5em;
+}
+
+.credits, .sign {
+  text-align: right;
+  color: #004c88;
+  font-size: 85%;
+  max-width: 20em;
+  margin-left: auto;
+  margin-bottom: 1em;
+}
+
+#logo {
+  fill: #2196f3;
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: text-bottom;
+}

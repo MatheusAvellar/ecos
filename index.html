@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Projeto Eco Urbano</title>
+  <meta content="Matheus Avellar" name="author">
+  <meta name="description" content="Pela preservação de sons urbanos do início do século XXI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>
+      <svg id="logo" viewBox="0 0 24 24"><path d="M4.93,4.93C3.12,6.74 2,9.24 2,12C2,14.76 3.12,17.26 4.93,19.07L6.34,17.66C4.89,16.22 4,14.22 4,12C4,9.79 4.89,7.78 6.34,6.34L4.93,4.93M19.07,4.93L17.66,6.34C19.11,7.78 20,9.79 20,12C20,14.22 19.11,16.22 17.66,17.66L19.07,19.07C20.88,17.26 22,14.76 22,12C22,9.24 20.88,6.74 19.07,4.93M7.76,7.76C6.67,8.85 6,10.35 6,12C6,13.65 6.67,15.15 7.76,16.24L9.17,14.83C8.45,14.11 8,13.11 8,12C8,10.89 8.45,9.89 9.17,9.17L7.76,7.76M16.24,7.76L14.83,9.17C15.55,9.89 16,10.89 16,12C16,13.11 15.55,14.11 14.83,14.83L16.24,16.24C17.33,15.15 18,13.65 18,12C18,10.35 17.33,8.85 16.24,7.76M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"/></svg>
+      <span>Projeto Eco Urbano</span>
+    </h1>
+    <p class="subtitle">Pela preservação de sons urbanos</p>
+  </header>
+  <main>
+    <hr>
+    <article class="audio-sample">
+      <div class="image-wrapper">
+        <h2 id="ferro-velho">Carro do Ferro Velho</h2>
+      </div>
+      <div class="waveform"></div>
+      <audio controls>
+        <source src="assets/ferro-velho/audio.mp3" type="audio/mp3">
+        <track class="texttrack" kind="captions" src="assets/ferro-velho/caption.vtt" srclang="pt-br" default>
+      </audio>
+      <output class="captions"></output>
+      <div class="extras">
+        <p>
+          Música usada:
+        </p>
+        <div>
+          <audio controls src="assets/ferro-velho/musica.mp3" type="audio/mp3"></audio>
+          <p>
+            "<a href="https://youtu.be/SdkWBHLHTgg?t=45">Uma Nova História</a>",
+            de Fernandinho
+          </p>
+        </div>
+      </div>
+    </article>
+    <hr>
+    <article class="audio-sample">
+      <div class="image-wrapper">
+        <h2 id="coratine-gelateria">Coratine Gelateria</h2>
+        <img src="assets/coratine-gelateria/image.png">
+      </div>
+      <div class="waveform"></div>
+      <audio controls>
+        <source src="assets/coratine-gelateria/audio.mp3" type="audio/mp3">
+        <!-- <track class="texttrack" kind="captions" src="assets/coratine-gelateria/caption.vtt" srclang="pt-br" default> -->
+      </audio>
+      <output class="captions"></output>
+      <div class="extras">
+        <p>
+          Início alternativo, antes da narração:
+        </p>
+        <audio controls src="assets/coratine-gelateria/alt.mp3" type="audio/mp3"></audio>
+        <p>
+          Música usada:
+        </p>
+        <p>
+          (ainda não identificada)
+        </p>
+      </div>
+    </article>
+    <script src="wavesurfer.min.js"></script>
+    <script>
+const samples = document.getElementsByClassName("audio-sample");
+[...samples].forEach(article => {
+  const wav = article.querySelector("div.waveform");
+  const audio = article.querySelector("audio");
+  const src = audio.querySelector("source").getAttribute("src");
+  const track = audio.querySelector("track");
+
+  const output = article.querySelector("output.captions");
+
+  let first_subtitle = null;
+  const subtitles = {};
+  const spacing = 1.25;
+
+  if(track) {
+    track.addEventListener("load", () => {
+      const cues = [...track.track.cues].map(v => [v.text, v.startTime]);
+
+      cues.forEach(([text, start_time], index) => {
+        const p = document.createElement("p");
+        p.textContent = text;
+        subtitles[start_time] = [ p, index ];
+        output.appendChild(p);
+      });
+      first_subtitle = output.firstElementChild;
+      first_subtitle.style.marginTop = `${spacing}em`;
+    });
+
+    track.addEventListener("cuechange", event => {
+      const activecues = event.target.track.activeCues;
+
+      if(activecues.length > 0) {
+        const text = activecues[0].text;
+        const start_time = activecues[0].startTime;
+        if(start_time in subtitles) {
+          output.querySelectorAll("[data-selected]").forEach(e => {
+            e.removeAttribute("data-selected");
+          });
+          const subtitle = subtitles[start_time];
+          subtitle[0].dataset.selected = "true";
+          first_subtitle.style.marginTop = `${subtitle[1] * -1.25}em`;
+        }
+      }
+    });
+  }
+
+  const wavesurfer = WaveSurfer.create({
+    container: wav,
+    scrollParent: true,
+    minPxPerSec: 10,
+    waveColor: "#dbe1e5",
+    progressColor: "#2196f3",
+    interact: false,
+    barWidth: 3,
+    barRadius: 3,
+    barGap: 3,
+    hideScrollbar: true
+  });
+  wavesurfer.load(src);
+  wavesurfer.setMute(true);
+
+  function updateWavesurferSeek() {
+    wavesurfer.seekTo(audio.currentTime / audio.duration);
+  }
+  audio.addEventListener("play", function() {
+    wavesurfer.play();
+    updateWavesurferSeek();
+  });
+  audio.addEventListener("pause", function() {
+    wavesurfer.pause();
+    updateWavesurferSeek();
+  });
+  audio.addEventListener("seeked", updateWavesurferSeek);
+});
+    </script>
+  </main>
+  <footer>
+    <p class="credits">
+      Este projeto usa a biblioteca wavesurfer.js, disponível sob a licença
+      <a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a>.
+      Você pode encontrar seus termos e código fonte em:
+      <a href="https://github.com/katspaugh/wavesurfer.js">github.com/katspaugh/wavesurfer.js</a>
+    </p>
+    <p class="sign">
+      Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
+      por Matheus Avellar<br>Rio de Janeiro, 2022
+    </p>
+  </footer>
+</body>
+</html>

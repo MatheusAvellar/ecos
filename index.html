@@ -2,27 +2,44 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title>Projeto Eco Urbano</title>
+  <title>Projeto Ecos Urbanos</title>
   <meta content="Matheus Avellar" name="author">
-  <meta name="description" content="Pela preservação de sons urbanos do início do século XXI">
+  <meta name="description" content="Pela preservação de sons urbanos.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <header>
+    <div id="banner" class="full-bleed" style="background-image:url(./assets/banner-smol.jpg)"></div>
+    <p class="banner-credits">
+      By Andrés Franchi<br>
+      Ugartemendía,<br>
+      via <a href="https://commons.wikimedia.org/wiki/File:Rio_de_Janeiro_Brasil_-_panoramio_(7).jpg">Commons</a>,<br>
+      under CC-BY-SA
+    </p>
     <h1>
-      <svg id="logo" viewBox="0 0 24 24"><path d="M4.93,4.93C3.12,6.74 2,9.24 2,12C2,14.76 3.12,17.26 4.93,19.07L6.34,17.66C4.89,16.22 4,14.22 4,12C4,9.79 4.89,7.78 6.34,6.34L4.93,4.93M19.07,4.93L17.66,6.34C19.11,7.78 20,9.79 20,12C20,14.22 19.11,16.22 17.66,17.66L19.07,19.07C20.88,17.26 22,14.76 22,12C22,9.24 20.88,6.74 19.07,4.93M7.76,7.76C6.67,8.85 6,10.35 6,12C6,13.65 6.67,15.15 7.76,16.24L9.17,14.83C8.45,14.11 8,13.11 8,12C8,10.89 8.45,9.89 9.17,9.17L7.76,7.76M16.24,7.76L14.83,9.17C15.55,9.89 16,10.89 16,12C16,13.11 15.55,14.11 14.83,14.83L16.24,16.24C17.33,15.15 18,13.65 18,12C18,10.35 17.33,8.85 16.24,7.76M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"/></svg>
-      <span>Projeto Eco Urbano</span>
+      <span class="word">
+        <span class="letter">P</span>rojeto
+      </span>
+      <span class="line-2">
+        <span class="word">
+          <span class="letter">E</span>cos
+        </span>
+        <span class="ornament"></span>
+      </span>
+      <span class="word">
+        <span class="letter">U</span>rbanos
+      </span>
     </h1>
-    <p class="subtitle">Pela preservação de sons urbanos</p>
+    <p class="subtitle">Pela preservação de sons urbanos.</p>
   </header>
   <main>
     <hr>
     <article class="audio-sample">
-      <div class="image-wrapper">
-        <h2 id="ferro-velho">Carro do Ferro Velho</h2>
-      </div>
+      <h2 id="ferro-velho">Carro do ferro velho</h2>
       <div class="waveform"></div>
       <audio controls>
         <source src="assets/ferro-velho/audio.mp3" type="audio/mp3">
@@ -44,10 +61,8 @@
     </article>
     <hr>
     <article class="audio-sample">
-      <div class="image-wrapper">
-        <h2 id="coratine-gelateria">Coratine Gelateria</h2>
-        <img src="assets/coratine-gelateria/image.png">
-      </div>
+      <h2 id="coratine-gelateria">Coratine gelateria</h2>
+      <img class="photo" src="assets/coratine-gelateria/image.png">
       <div class="waveform"></div>
       <audio controls>
         <source src="assets/coratine-gelateria/audio.mp3" type="audio/mp3">
@@ -119,7 +134,7 @@ const samples = document.getElementsByClassName("audio-sample");
     scrollParent: true,
     minPxPerSec: 10,
     waveColor: "#dbe1e5",
-    progressColor: "#2196f3",
+    progressColor: "crimson",
     interact: false,
     barWidth: 3,
     barRadius: 3,
@@ -145,16 +160,20 @@ const samples = document.getElementsByClassName("audio-sample");
     </script>
   </main>
   <footer>
+    <p class="sign">
+      Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
+      por Matheus Avellar<br>Rio de Janeiro, 2022
+    </p>
+    <p class="credits">
+      Todos os áudios do projeto estão disponíveis ao domínio público.
+    </p>
     <p class="credits">
       Este projeto usa a biblioteca wavesurfer.js, disponível sob a licença
       <a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a>.
       Você pode encontrar seus termos e código fonte em:
       <a href="https://github.com/katspaugh/wavesurfer.js">github.com/katspaugh/wavesurfer.js</a>
     </p>
-    <p class="sign">
-      Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
-      por Matheus Avellar<br>Rio de Janeiro, 2022
-    </p>
   </footer>
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
 </body>
 </html>

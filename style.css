@@ -6,22 +6,29 @@ html, body {
   min-height: 100%;
   margin: 0;
   color: #444;
+  background-color: #fdfdfd;
 }
 @supports (font-variation-settings: normal) {
   html {
-    font-family: "Inter var", Roboto, sans-serif;
+    font-family: "Inter var", Inter, Roboto, sans-serif;
   }
 }
 body {
-  color: #111;
   overflow-y: scroll;
 }
 header,main,footer {
-  max-width: 800px;
-  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr min(860px, 100%) 1fr;
+}
+header > *, main > *, footer > * {
+  grid-column: 2;
+}
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
 }
 header {
-  padding: 1em 1em 0;
+  position: relative;
 }
 main {
   padding: 1em;
@@ -36,8 +43,45 @@ h1,h2,h3,h4, p {
   margin: 0;
   line-height: 1.25;
 }
+h1 {
+  font-family: "Major Mono Display";
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #444;
+  box-shadow: .25em .25em #444;
+  border: 4px solid #444;
+
+  width: min-content;
+  background-color: #fff;
+  padding: .5em;
+  margin: -2em auto 1em;
+  z-index: 1;
+}
+h1 .letter {
+  color: crimson;
+}
+h1 > .line-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 .ornament {
+  width: 1.75ch;
+  height: .25ch;
+  background-color: crimson;
+}
 h2 {
-  margin-bottom: .5em;
+  margin: 0;
+  font-family: "Major Mono Display";
+  letter-spacing: -2px;
+  font-size: 3em;
+}
+
+.subtitle {
+  color: #444;
+  text-align: center;
+  font-style: italic;
 }
 
 audio, output {
@@ -101,25 +145,11 @@ hr {
 .audio-sample {
   margin-bottom: 3em;
 }
-.image-wrapper {
-  position: relative;
-  min-height: 7em;
-  margin-top: 2em;
-}
-.image-wrapper img {
-  position: absolute;
+.audio-sample img.photo {
   max-height: 10em;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-.image-wrapper h2 {
-  line-height: 1;
-  font-size: 5em;
-  padding-right: .5em;
-  text-shadow: 0px 5px 2px rgb(0, 0, 0, .6);
-  color: #30c6ff;
+  float: right;
+  margin: -2.75rem .5rem .75rem;
+  vertical-align: top;
 }
 
 .extras {
@@ -153,7 +183,7 @@ hr {
   margin-top: .5em;
 }
 
-.credits, .sign {
+.banner-credits, .credits, .sign {
   text-align: right;
   color: #004c88;
   font-size: 85%;
@@ -161,10 +191,19 @@ hr {
   margin-left: auto;
   margin-bottom: 1em;
 }
+.banner-credits {
+  position: absolute;
+  font-size: 60%;
+  width: 20ch;
+  line-height: 1;
+  right: 1rem;
+  bottom: 10rem;
+}
 
-#logo {
-  fill: #2196f3;
-  width: 1.25em;
-  height: 1.25em;
-  vertical-align: text-bottom;
+#banner {
+  height: max(10vh, 20rem);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  box-sizing: border-box;
 }

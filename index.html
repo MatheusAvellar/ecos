@@ -7,18 +7,37 @@
 	<meta name="description" content="Pela preservação de sons urbanos.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css?v2">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<style>
+:root {
+	--color-place: #ffcdcd;
+	--color-author: #e3ceff;
+	--color-music: #c0ecff;
+	--color-misc: #e6e6e6;
+}
+	</style>
 </head>
 <body>
+	<div hidden>
+		<svg xmlns="http://www.w3.org/2000/svg">
+			<path id="icon-pin" d="M16 12v-8h1v-2h-10v2h1v8l-2 2v2h5.2v6h1.6v-6h5.2v-2l-2-2z"/>
+			<g id="icon-vinyl">
+				<path d="M346.65 363.42c3.3555-7.8281 9.5039-13.977 17.332-17.332 7.2695-2.7969 16.215-3.3555 24.043.5586 8.3867 3.3555 14.539 9.5039 17.332 17.332 3.3555 7.2695 3.3555 16.215 0 24.043-3.3555 8.3867-9.5039 14.539-17.332 17.332-7.2695 3.3555-16.215 3.3555-24.602 0-7.8281-3.3555-13.977-9.5039-17.332-17.332-2.7969-7.2695-3.3555-16.215.5586-24.602zm22.926-2.7969v.5586c-3.9141 1.1172-6.7109 4.4727-8.3867 8.3867-2.2383 4.4727-1.6758 8.9453 0 12.301 1.1172 3.9141 4.4727 7.2695 8.3867 8.9453 4.4727 1.6758 8.9453 1.6758 12.301 0 3.9141-1.6758 7.2695-4.4727 8.9453-8.9453 1.6758-3.9141 1.6758-8.3867 0-12.301-1.6758-3.9141-4.4727-6.7109-8.3867-8.3867-4.4727-2.2383-8.9453-1.6758-12.859-.5586z"/>
+				<path d="M161.57 286.82c24.602-59.266 71.008-102.88 125.8-125.25 55.355-22.926 118.54-24.602 177.8 0 59.266 24.602 102.88 71.008 125.25 125.8 22.363 55.355 24.043 118.54-.5586 177.8-24.602 59.266-71.008 102.88-125.8 125.25-54.793 22.363-118.54 24.043-177.24-.5586-59.266-24.602-102.88-71.008-125.25-125.8-22.926-54.793-24.602-118.54 0-177.24zm138.66 57.59-48.086-31.312-65.418-41.934c-12.301 22.363-20.688 46.406-24.602 71.566l76.043 8.9453 57.59 7.2695c1.1172-5.0312 2.7969-10.062 4.4727-14.539zm7.8281-13.977c.5586-1.6758 1.6758-2.7969 2.7969-3.9141l-112.95-73.805c-1.1172 1.6758-2.2383 3.3555-3.3555 5.0312l65.977 41.934zm147.61 62.621c-.5586 5.0312-2.2383 9.5039-4.4727 14.539l48.645 30.754 65.418 42.492c3.9141-7.2695 7.2695-14.539 10.062-21.805 7.2695-16.773 11.742-33.547 14.539-50.32l-76.043-8.9453-58.148-6.7109zm-11.742 28.516c-1.1172 1.1172-1.6758 2.2383-2.7969 3.3555l112.38 73.805c1.1172-1.1172 2.2383-2.7969 3.3555-4.4727l-65.977-42.492-46.965-30.191zm-93.375-106.79c-15.656 6.7109-28.516 19.012-35.785 35.785-6.7109 16.773-6.1523 34.664 0 50.32 6.7109 15.656 19.012 29.074 35.785 35.785 16.773 7.2695 34.664 6.7109 50.32.5586 15.656-6.7109 29.074-19.012 35.785-35.785 7.2695-16.773 6.7109-35.227.5586-50.879-6.7109-15.656-19.012-28.516-35.785-35.785-16.773-6.7109-35.227-6.1523-50.879 0z"/>
+			</g>
+			<path id="icon-asterisk" d="M21 13H14.4L19.1 17.7L17.7 19.1L13 14.4V21H11V14.3L6.3 19L4.9 17.6L9.4 13H3V11H9.6L4.9 6.3L6.3 4.9L11 9.6V3H13V9.4L17.6 4.8L19 6.3L14.3 11H21V13Z"/>
+			<path id="icon-microphone" d="M9,3A4,4 0 0,1 13,7H5A4,4 0 0,1 9,3M11.84,9.82L11,18H10V19A2,2 0 0,0 12,21A2,2 0 0,0 14,19V14A4,4 0 0,1 18,10H20L19,11L20,12H18A2,2 0 0,0 16,14V19A4,4 0 0,1 12,23A4,4 0 0,1 8,19V18H7L6.16,9.82C5.67,9.32 5.31,8.7 5.13,8H12.87C12.69,8.7 12.33,9.32 11.84,9.82M9,11A1,1 0 0,0 8,12A1,1 0 0,0 9,13A1,1 0 0,0 10,12A1,1 0 0,0 9,11Z"/>
+		</svg>
+	</div>
 	<header>
 		<div id="banner" class="full-bleed" style="background-image:url(./assets/banner-smol.jpg)"></div>
 		<p class="banner-credits">
-			By Andrés Franchi<br>
+			Andrés Franchi<br>
 			Ugartemendía,<br>
-			via <a href="https://commons.wikimedia.org/wiki/File:Rio_de_Janeiro_Brasil_-_panoramio_(7).jpg">Commons</a>,<br>
-			under CC-BY-SA
+			via <a href="https://commons.wikimedia.org/wiki/File:Rio_de_Janeiro_Brasil_-_panoramio_(7).jpg">WikiCommons</a>,<br>
+			<a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>
 		</p>
 		<h1>
 			<span class="word">
@@ -50,22 +69,43 @@
 				<a href="assets/ferro-velho/transcript.txt">Transcrição</a>
 			</p>
 			<div class="extras">
-				<p>
-					Música usada:
-				</p>
-				<div>
-					<audio controls src="assets/ferro-velho/musica.mp3" type="audio/mp3"></audio>
+
+				<div class="card" style="--accent:var(--color-place)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
+						<span>Local</span>
+					</div>
+					<p>Gravado em <b>Rio de Janeiro</b>, RJ.</p>
+				</div>
+
+				<div class="card" style="--accent:var(--color-author)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-microphone"/></svg>
+						<span>Gravação</span>
+					</div>
+					<p>Gravado por <b>Matheus Avellar</b> (@aveiiar).</p>
+				</div>
+
+				<div class="card" style="--accent:var(--color-music)">
+					<div class="card-icon">
+						<svg viewBox="100 100 552 552"><use href="#icon-vinyl"/></svg>
+						<span>Música</span>
+					</div>
 					<p>
 						"<a href="https://youtu.be/SdkWBHLHTgg?t=45">Uma Nova História</a>",
 						de Fernandinho
 					</p>
+					<div style="margin-top:.5em">
+						<audio controls src="assets/ferro-velho/musica.mp3" type="audio/mp3"></audio>
+					</div>
 				</div>
+
 			</div>
 		</article>
 		<hr>
 		<article class="audio-sample">
 			<h2 id="coratine-gelateria">Coratine gelateria</h2>
-			<img class="photo" src="assets/coratine-gelateria/image.png">
+			<img class="photo" src="assets/coratine-gelateria/image.png" alt="Carro da Coratine Gelateria">
 			<div class="waveform"></div>
 			<audio controls>
 				<source src="assets/coratine-gelateria/audio.mp3" type="audio/mp3">
@@ -76,18 +116,81 @@
 				<a href="assets/coratine-gelateria/transcript.txt">Transcrição</a>
 			</p>
 			<div class="extras">
-				<p>
-					Início alternativo, antes da narração:
-				</p>
-				<audio controls src="assets/coratine-gelateria/alt.mp3" type="audio/mp3"></audio>
-				<p>
-					Música usada:
-				</p>
-				<p>
-					(ainda não identificada)
-				</p>
+
+				<div class="card" style="--accent:var(--color-place)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
+						<span>Local</span>
+					</div>
+					<p>Gravado em <b>Rio de Janeiro</b>, RJ.</p>
+				</div>
+
+				<div class="card" style="--accent:var(--color-author)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-microphone"/></svg>
+						<span>Gravação</span>
+					</div>
+					<p>Gravado por <b>Matheus Avellar</b> (@aveiiar).</p>
+				</div>
+
+				<div class="card" style="--accent:var(--color-music)">
+					<div class="card-icon">
+						<svg viewBox="100 100 552 552"><use href="#icon-vinyl"/></svg>
+						<span>Música</span>
+					</div>
+					<p>
+						(ainda não identificada)
+					</p>
+				</div>
+
+				<div class="card" style="--accent:var(--color-misc)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-asterisk"/></svg>
+						<span>Versão alternativa</span>
+					</div>
+					<p>
+						Início alternativo, antes da narração:
+					</p>
+					<div style="margin-top:.5em">
+						<audio controls src="assets/coratine-gelateria/alt.mp3" type="audio/mp3"></audio>
+					</div>
+				</div>
+
 			</div>
 		</article>
+		<hr>
+		<article class="audio-sample">
+			<h2 id="coratine-gelateria">Carro do Óleo</h2>
+			<div class="waveform"></div>
+			<audio controls>
+				<source src="assets/carro-do-oleo/audio.mp3" type="audio/mp3">
+				<track class="texttrack" kind="captions" src="assets/carro-do-oleo/caption.vtt" srclang="pt-br" default>
+			</audio>
+			<output class="captions"></output>
+			<p style="text-align:right">
+				<a href="assets/carro-do-oleo/transcript.txt">Transcrição</a>
+			</p>
+			<div class="extras">
+
+				<div class="card" style="--accent:var(--color-place)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-pin"/></svg>
+						<span>Local</span>
+					</div>
+					<p>Gravado em <b>São Bernardo do Campo</b>, SP.</p>
+				</div>
+
+				<div class="card" style="--accent:var(--color-author)">
+					<div class="card-icon">
+						<svg viewBox="0 0 24 24"><use href="#icon-microphone"/></svg>
+						<span>Gravação</span>
+					</div>
+					<p>Gravado por <b>Lígia Maria</b> (@ligiatuiteira).</p>
+				</div>
+
+			</div>
+		</article>
+		<hr>
 		<script src="assets/wavesurfer.min.js"></script>
 		<script>
 const samples = document.getElementsByClassName("audio-sample");
@@ -168,7 +271,7 @@ const samples = document.getElementsByClassName("audio-sample");
 	<footer>
 		<p class="sign">
 			Feito com ♥︎&#xFE0E;<!--&#xFE0E;[Ref] stackoverflow.com/a/38452396/4824627-->
-			por Matheus Avellar<br>Rio de Janeiro, 2022
+			por Matheus Avellar<br>Rio de Janeiro, 2022–2024
 		</p>
 		<p class="credits">
 			Todos os áudios do projeto estão disponíveis ao domínio público.

@@ -44,7 +44,7 @@ h1,h2,h3,h4, p {
 	line-height: 1.25;
 }
 h1 {
-	font-family: "Major Mono Display";
+	font-family: "Major Mono Display", "Inter var", Inter, Roboto, sans-serif;
 	font-size: 4em;
 	line-height: 1;
 	letter-spacing: -2px;
@@ -88,7 +88,7 @@ audio, output {
 	width: 100%;
 	display: block;
 }
-output {
+.captions {
 	text-align: center;
 	border-radius: 3px;
 	margin: .5em 0;
@@ -102,14 +102,14 @@ output {
 	overflow: hidden;
 	position: relative;
 }
-output p:first-of-type {
+.captions p:first-of-type {
 	transition: margin .1s ease;
 }
-output p:not([data-selected]) {
+.captions p:not([data-selected]) {
 	opacity: 0.25;
 }
-output::before,
-output::after {
+.captions::before,
+.captions::after {
 	content: "";
 	position: absolute;
 	left: 0;
@@ -118,10 +118,10 @@ output::after {
 	box-shadow: 0 0 1em 0.75em #f1f3f4;
 	z-index: 1;
 }
-output::before {
+.captions::before {
 	top: -1em;
 }
-output::after {
+.captions::after {
 	bottom: -1em;
 }
 
@@ -222,6 +222,9 @@ hr {
 	.waveform {
 		clear: both;
 	}
+	.captions {
+		font-size: .85rem;
+	}
 }
 @media screen and (max-width: 530px) {
 	h1 {
@@ -229,5 +232,8 @@ hr {
 	}
 	.banner-credits {
 		bottom: 3.25rem;
+	}
+	.captions {
+		font-size: .75rem;
 	}
 }

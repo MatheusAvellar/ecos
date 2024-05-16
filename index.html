@@ -7,7 +7,8 @@
 	<meta name="description" content="Pela preservação de sons urbanos.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="referrer" content="no-referrer">
-	<link rel="stylesheet" type="text/css" href="style.css?v2">
+	<link rel="stylesheet" type="text/css" href="style.css?v3">
+	<link rel="preconnect" href="https://cdn.avl.la/" crossorigin>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<style>
@@ -109,9 +110,9 @@
 			<div class="waveform"></div>
 			<audio controls>
 				<source src="assets/coratine-gelateria/audio.mp3" type="audio/mp3">
-				<!-- <track class="texttrack" kind="captions" src="assets/coratine-gelateria/caption.vtt" srclang="pt-br" default> -->
+				<track class="texttrack" kind="captions" src="assets/coratine-gelateria/caption.vtt" srclang="pt-br" default>
 			</audio>
-			<output class="captions">(ainda sem legendas simultâneas)</output>
+			<output class="captions"></output>
 			<p style="text-align:right">
 				<a href="assets/coratine-gelateria/transcript.txt">Transcrição</a>
 			</p>
@@ -283,6 +284,7 @@ const samples = document.getElementsByClassName("audio-sample");
 			<a href="https://github.com/katspaugh/wavesurfer.js">github.com/katspaugh/wavesurfer.js</a>
 		</p>
 	</footer>
+	<link href="https://cdn.avl.la/font/inter.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
 </body>
 </html>

@@ -1,4 +1,10 @@
-A Coratine Gelateria trouxe para o brasil o sorvete artesanal italiano feito com produtos naturais e de qualidade! Nossos sorvetes são feitos diariamente e não utilizamos gordura hidrogenada! O carro do sorvete está aqui na sua rua! Venha experimentar nossos deliciosos sorvetes. Nossos sabores tradicionais são:
+[música]
+A Coratine Gelateria trouxe para o Brasil o sorvete artesanal italiano
+feito com produtos naturais e de qualidade!
+Nossos sorvetes são feitos diariamente e não utilizamos gordura hidrogenada!
+O carro do sorvete está aqui na sua rua!
+Venha experimentar nossos deliciosos sorvetes.
+Nossos sabores tradicionais são:
 	Abacaxi;
 	Chocolate Belga;
 	Creme;
@@ -20,7 +26,7 @@ Nossos sabores especiais são:
 	Banana com doce de leite;
 	Banana com nutella;
 	Morango com nutella;
-	Cookie’n’Creme;
+	Cookie'n'Creme;
 	Torta de limão com suspiro;
 	Paçoca;
 	Tapioca com leite condensado;
@@ -30,7 +36,11 @@ Nossos sabores especiais são:
 	Pistache.
 [música]
 Conheça também a nossa linha premium! Os sabores são:
-	Amarena crocante: Nosso delicioso sorvete de Variegato Amarena mesclado com amendoim e calda de chocolate;
+	Amarena crocante:
+		Nosso delicioso sorvete de Variegato Amarena mesclado com amendoim e
+		calda de chocolate;
 	Cheesecake de morango com biscoito;
-	Tiramisu: um delicioso sorvete feito de uma sobremesa italiana que é produzida com café, cacau, queijo mascarpone e vinho Marsala.
+	Tiramisu:
+		Um delicioso sorvete feito de uma sobremesa italiana que é produzida com café,
+		cacau, queijo mascarpone e vinho Marsala.
 Venha ao carro do sorvete! Aceitamos crédito e débito!
